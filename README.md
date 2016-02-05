@@ -1,2 +1,2 @@
 # Java-to-Ruby-Translator
-We write code to translate code
+A program that can take a working Ruby script, and translate it into a Java program with the same functionality
