@@ -15,8 +15,8 @@ The final product will be a fully functional program that is able to turn compil
 ## Timeline
 | Date          |               |
 | ------------- | ------------- |
-| February 26   | Class that can ensure the program is in Ruby |
-| April 1       | Class that recognizes Java code |
+| February 26   | Class that recognizes statements and loops in Ruby |
+| April 1       | Class that can recognize the entirety of Ruby |
 | April 29      | Class that converts Java to Ruby |
 
 ## Reality Check
