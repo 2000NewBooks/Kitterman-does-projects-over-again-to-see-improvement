@@ -12,5 +12,9 @@
     main translator class that will replace the Ruby commands with java code that can do the same thing.
     
 ##18/2/2016
-    Today I continued relearning Ruby, and started a list of Ruby commands that our program must recognize, and what java commands should replace them, like puts "" -> System.out.println(""). We have done a fair amount on the actual translator class, and should be able to complete our first deliverable on time (February 26), which are methods that can recognize Ruby loops and statements, and convert them to the appropriate java loops and statements. However, we will most likely still need to do quite a bit of bugfixing for it to work.
+    Today I continued relearning Ruby, and started a list of Ruby commands that our program must recognize, and what java commands should
+    replace them, like puts "" -> System.out.println(""). We have done a fair amount on the actual translator class, and should be able
+    to complete our first deliverable on time (February 26), which are methods that can recognize Ruby loops and statements, and convert
+    them to the appropriate java loops and statements. However, we will most likely still need to do quite a bit of bugfixing for it to
+    work.
     
