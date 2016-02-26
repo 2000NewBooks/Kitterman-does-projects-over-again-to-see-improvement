@@ -49,7 +49,7 @@ public class Translator
     }
     
     /**
-     * ##UNFINISHED##
+     * Almost Done
      * Returns a java version of an inputted line of Ruby code
      * @return a java version of an inputted line of Ruby code
      */
@@ -57,6 +57,7 @@ public class Translator
     {
         int eqPos = -1; //Stores the position of the equal sign so the variables can be separated
         String newLine = ""; //Translated line
+        boolean isUntilLoop = false;
         if (line.indexOf("while") != -1)
         {
             newLine += "while ("; //Adds while to the new line
@@ -65,12 +66,27 @@ public class Translator
         }
         else if (line.indexOf("do") != -1)
         {
-
+            newLine += "";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf("do") + 2, eqPos);
         }
         else if (line.indexOf("for") != -1)
         {
-
+            newLine += "for (";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf("for") + 3, eqPos);
         }
+        else if(line.indexOf("until") != -1 )
+        {
+            isUntilLoop = true;
+            if(isUntilLoop)
+            {
+                newLine += "do{" + line + "}";//This is still kinda broken.
+                eqPos = line.trim().indexOf("="); //Works sorta
+                String var = line.substring(line.indexOf("until") + 5 , eqPos);
+            }
+        }
+
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
