@@ -19,5 +19,8 @@ them to the appropriate java loops and statements. However, we will most likely 
 work.
 
 ##26/2/2016
-Today we tested our program, making sure that it actually is able to translate Ruby loops (do, until, while, for), to java loops. This  
+Today we tested our program, making sure that it actually is able to translate Ruby loops (do, until, while, for), to java loops. This
 was pretty difficult, as we had to make the program find the file and read it line-by-line while outputting it to a new file. We also added the simple class Variable, which we use to store the name and type of the variables in the Ruby program, so that we can create them as java variables later. We will most likely just make eveything a state variable, as trying to keep the scope would be rather hard.
+
+##3/4/2016
+Today I 
