@@ -20,7 +20,13 @@ work.
 
 ##26/2/2016
 Today we tested our program, making sure that it actually is able to translate Ruby loops (do, until, while, for), to java loops. This
-was pretty difficult, as we had to make the program find the file and read it line-by-line while outputting it to a new file. We also added the simple class Variable, which we use to store the name and type of the variables in the Ruby program, so that we can create them as java variables later. We will most likely just make eveything a state variable, as trying to keep the scope would be rather hard.
+was pretty difficult, as we had to make the program find the file and read it line-by-line while outputting it to a new file. We also
+added the simple class Variable, which we use to store the name and type of the variables in the Ruby program, so that we can create
+them as java variables later. We will most likely just make eveything a state variable, as trying to keep the scope would be rather
+hard.
 
 ##3/4/2016
-Today I 
+Today I continued learning Ruby, figuring out how different commands run so that we can have our program create java code that does
+the same thing. We also added the ability to translate things like 'puts' and implemented the equivalent of 'gets.chomp'. We will
+still need to edit the 'puts' translator however, as it doesn't always work if the Ruby code is using puts to print a variable. This
+shouldn't be too difficult to fix though.
