@@ -11,4 +11,20 @@ Trying to program a project that recognizes the entirety of Ruby was definetely 
 2/26/16 
 Today we have finished and turned in our first deliverable. It is working pretty well, the only broken thing is the until loop tester. We have no idea how to make our translate() method read more than one line. This is okay though, the rest is good. The other checks read the first line to see if it is the correct loop. Then it outputs what you should write in java, assuming it was in Ruby when you typed it. The other method is a filewriter does stuff. You input the name of your file, the code checks to see if you have that file on your PC, converts it to java using the translate() method(well, only the loops as of now), and prints out a new file that has been converted. We're aiming to be able to read all of your file, then with the next deliverable be able to convert all that to java. This is not going to be that hard, just a bunch of switches and if-else if-else statements. Maybe a for loop to go through your entire file in one fell swoop.
 
+3/4/16
 Today working on the project went well. We are starting to write the implementation for recognition of the entire ruby language. We are going to have to use for loops for whenever someone wants to do a statement more than once. We'll have them input a number of times they want to do something, then iterate the statement that many times. Also the filereader is good. It accepts a file, reads it, and tries to convert it to java. Ruby is pretty compact, so we're going to give them back a file that is a lot larger. The scope of variables in ruby is also pretty hard to understand. Basically everything is global unless you put it in some sort of block? Whatever, at least you don't need a semicolon at the end of every line :). The loop converter is fully functional now, because I took the time over the weekend to fix it.
+
+
+3/11/16
+Working was good, we made lots of progress. At least in understanding how Ruby works and the translations we are going to need to make. We are also going to run a single filewriter. It reads the file one line at a time, then prints out the appropriate java code to a different file. This is going to run pretty well. Then we started to write code to translate all the weird stuff like.
+
+twice.do{//code}
+
+puts#//word{name}
+
+for($i...115) & for($i .. 115)
+
+twice.do will be replaced with a for loop that iterates twice, and puts will be replaced with System.out.println
+The for loops will be replaced with for loops that run num times for three dots, and num-1 dots for two dots.
+
+We will also need to check out the different declarations of variables in ruby. That's it for now.
