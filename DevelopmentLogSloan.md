@@ -36,3 +36,6 @@ Today I continued working on the Ruby codecademy course, and added on a few thin
 replace, and with what java thingies. We are pretty far on our way toward our next deliverable, which is "Recognize the entirety of
 Ruby". This would probably take quite a long time to actually complete, but we should have all of the commands that will be likely to
 show up in someone's Ruby code that they'd like to translate.
+
+##3/18/2016
+Today I continued working on the codecademy Ruby course, and began implementing a multi-dimensional array translator, as theyh are pretty similar in java and Ruby. I also tried to make a translator for the .each method in Ruby, by just making an iterator for() loop, and attempted to implement the java version of a Ruby for loop with start..end or start...end.
