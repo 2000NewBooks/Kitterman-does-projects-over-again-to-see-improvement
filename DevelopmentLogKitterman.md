@@ -28,3 +28,8 @@ twice.do will be replaced with a for loop that iterates twice, and puts will be 
 The for loops will be replaced with for loops that run num times for three dots, and num-1 dots for two dots.
 
 We will also need to check out the different declarations of variables in ruby. That's it for now.
+
+
+
+3/18/16
+We've implemented all the things that I said would be hard last week. Turns out that we just needed to call one of our methods that prints out a for loop. All in all, I'd say today was pretty successful. puts was replaced with system.out.println, and the for loops were just incremented by one if they have three dots instead of two. Java and Ruby are languages with the same focus, but very dissimilar code. That makes a lot of the conversions innacurate, like if someone wants to do a java loop, it's a slightly different function in ruby and it will change a whole lot in the file that we print out. I think the most successful part of our project so far was writing a translator class that reads an uploaded file one line at a time, and then translates the code line by line. I'm pretty impressed with our progress so far
