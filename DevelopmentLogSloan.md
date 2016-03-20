@@ -38,4 +38,7 @@ Ruby". This would probably take quite a long time to actually complete, but we s
 show up in someone's Ruby code that they'd like to translate.
 
 ##3/18/2016
-Today I continued working on the codecademy Ruby course, and began implementing a multi-dimensional array translator, as theyh are pretty similar in java and Ruby. I also tried to make a translator for the .each method in Ruby, by just making an iterator for() loop, and attempted to implement the java version of a Ruby for loop with start..end or start...end.
+Today I continued working on the codecademy Ruby course, and began implementing a multi-dimensional array translator, as they are
+pretty similar in java and Ruby since they both use a temporary variable to terate through the array. I also tried to make a
+translator for the .each method in Ruby, by just making an iterator for() loop, and attempted to implement the java version of a Ruby
+for loop with start..end or start...end.
