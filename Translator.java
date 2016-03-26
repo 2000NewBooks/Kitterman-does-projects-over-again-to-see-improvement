@@ -86,7 +86,35 @@ public class Translator
                 String var = line.substring(line.indexOf("until") + 5 , eqPos);
             }
         }
-
+        
+        else if(line.indexOf("puts") != -1)
+        {
+            newLine += "System.out.println(//words);";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf("puts") + 4 , eqPos);
+        }
+        
+        else if(line.indexOf(".chomp") != -1)
+        {
+            newLine += "Console console = System.console(); String line = console.readLine(//words you want to take input from) ";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf(".chomp") + 6 , eqPos);
+        }
+        
+        else if(line.indexOf("Array.new") != -1)
+        {
+            newLine += "double[] newArr = new double[some number here];";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf("Array.new") + 9 , eqPos);
+        }
+        
+        else if(line.indexOf("Array.each") != -1)
+        {
+            newLine += "for(double u; newArr); {/*Some expression here/*}";
+            eqPos = line.trim().indexOf("=");
+            String var = line.substring(line.indexOf("Array.each") + 10 , eqPos);
+        }
+        
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
