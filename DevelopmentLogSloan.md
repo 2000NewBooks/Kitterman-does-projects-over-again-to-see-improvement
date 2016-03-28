@@ -42,3 +42,6 @@ Today I continued working on the codecademy Ruby course, and began implementing 
 pretty similar in java and Ruby since they both use a temporary variable to terate through the array. I also tried to make a
 translator for the .each method in Ruby, by just making an iterator for() loop, and attempted to implement the java version of a Ruby
 for loop with start..end or start...end.
+
+##3/25/2016
+I pretty much didnt do anything, since it was spring break, and I was too lazy.
