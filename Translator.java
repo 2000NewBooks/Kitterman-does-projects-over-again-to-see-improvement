@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Translator
 {
-    private Variable[] vars = new Variable[100]; //Stores variables to be added as state variables in the translated code
+    private ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
     private static int lineNum = -1; //Stores which line is being read
 
     /**
@@ -112,7 +112,7 @@ public class Translator
         {
             newLine += "for(double u; newArr); {/*Some expression here/*}";
             eqPos = line.trim().indexOf("=");
-            String var = line.substring(line.indexOf("Array.each") + 10 , eqPos);
+            var = line.substring(line.indexOf("Array.each") + 10 , eqPos);
         }
         
         else
