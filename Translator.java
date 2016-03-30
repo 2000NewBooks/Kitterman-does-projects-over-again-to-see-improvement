@@ -115,7 +115,9 @@ public class Translator
             eqPos = line.trim().indexOf("=");
             vars.add(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
         }
-        
+
+        /* Still need to add operations (*, /, %, etc), and variable assignment */
+
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
