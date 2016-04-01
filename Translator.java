@@ -59,6 +59,9 @@ public class Translator
         int eqPos = -1; //Stores the position of the equal sign so the variables can be separated
         String newLine = ""; //Translated line
         boolean isUntilLoop = false;
+
+        /* LOOPS */
+
         if (line.indexOf("while") != -1)
         {
             newLine += "while ("; //Adds while to the new line
@@ -87,6 +90,8 @@ public class Translator
                 vars.add(line.substring(line.indexOf("until") + 5 , eqPos), "double");
             }
         }
+
+        /* CONSOLE */
         
         else if(line.indexOf("puts") != -1)
         {
@@ -101,6 +106,8 @@ public class Translator
             eqPos = line.trim().indexOf("=");
             vars.add(line.substring(line.indexOf(".chomp") + 6 , eqPos), "String");
         }
+
+        /* VARIABLES (Unfinished) */
         
         else if(line.indexOf("Array.new") != -1)
         {
@@ -116,7 +123,32 @@ public class Translator
             vars.add(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
         }
 
-        /* Still need to add operations (*, /, %, etc), and variable assignment */
+        /* OPERATIONS (unfinished) */
+
+        else if(line.indexOf("+") != -1)
+        {
+
+        }
+
+        else if(line.indexOf("-") != -1)
+        {
+
+        }
+
+        else if(line.indexOf("/") != -1)
+        {
+
+        }
+
+        else if(line.indexOf("*") != -1)
+        {
+
+        }
+
+        else if(line.indexOf("%") != -1)
+        {
+
+        }
 
         else
         {
