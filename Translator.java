@@ -19,6 +19,7 @@ public class Translator
     }
     
     /**
+     * Takes the user's Ruby file, then translates it to java and prints it to a new file
      * Runs the program
      * @param args unused
      */
@@ -27,6 +28,11 @@ public class Translator
         Scanner kbReader = new Scanner(System.in);
         System.out.println("Please input the name of the file you would ike to have translated");
         String fileName = kbReader.nextLine();
+        System.out.println("Please input the name of the translated file to be output");
+        String exportName = kbReader.nextLine();
+        File file = new File(exportName);
+        file.createNewFile();
+        FileWriter writer = new FileWriter(file);
         String line = null; //Used to scan line-by-line
         try
         {
@@ -35,9 +41,11 @@ public class Translator
             while((line = bufferedReader.readLine()) != null)
             {
                 lineNum++; //corrects what line is being read
-                System.out.println(translate(line)); //outputs the new java code line-by-line, this should be changed
+                writer.write(translate(line) + "\n"); //outputs the new java code line-by-line, this should be changed
             }
             bufferedReader.close();
+            writer.flush();
+            writer.close();
         }
         catch(FileNotFoundException ex)
         {
