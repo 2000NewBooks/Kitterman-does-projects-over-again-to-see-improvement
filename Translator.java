@@ -149,7 +149,15 @@ public class Translator
         {
 
         }
-
+    
+        else if(line.indexOf("$")
+        {
+            
+            newLine += type + "line.substring(line.indexOf("$"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            vars.add(line.substring(line.indexOf("%") + 1 , eqPos), "double");
+        }
+        
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
