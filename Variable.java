@@ -35,4 +35,13 @@ public class Variable
     {
         return type;
     }
+
+    /**
+    * Returns the variable in the form: String str
+    * @return the variable in the form: String str
+    */
+    public String toString()
+    {
+        return this.returnType() + " " + this.returnName();
+    }
 }
