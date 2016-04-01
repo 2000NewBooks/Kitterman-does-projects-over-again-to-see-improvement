@@ -41,7 +41,7 @@ public class Translator
             while((line = bufferedReader.readLine()) != null)
             {
                 lineNum++; //corrects what line is being read
-                writer.write(translate(line) + "\n"); //outputs the new java code line-by-line, this should be changed
+                writer.write(translate(line) + "\n"); //outputs the new java code to a file
             }
             bufferedReader.close();
             writer.flush();
@@ -135,27 +135,27 @@ public class Translator
 
         else if(line.indexOf("+") != -1)
         {
-
+            newLine = line + ";";
         }
 
         else if(line.indexOf("-") != -1)
         {
-
+            newLine = line + ";";
         }
 
         else if(line.indexOf("/") != -1)
         {
-
+            newLine line + ";";
         }
 
         else if(line.indexOf("*") != -1)
         {
-
+            newLine line + ";";
         }
 
         else if(line.indexOf("%") != -1)
         {
-
+            newLine line + ";";
         }
     
         else if(line.indexOf("$")
