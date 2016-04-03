@@ -45,3 +45,8 @@ for loop with start..end or start...end.
 
 ##3/25/2016
 I pretty much didnt do anything, since it was spring break, and I was too lazy.
+
+##4/1/2016
+Today I added functionality for the transation of the basic operations + - * / %, made it so it actually does output the translated\
+code to a new file, which it prompts the user to name. I also added a bunch of comments to make the code easier to understand for
+people looking at it, and added a toString() method for the Variable class to make the final creation of variables easier.
