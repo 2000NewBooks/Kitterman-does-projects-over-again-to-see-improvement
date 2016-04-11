@@ -50,3 +50,8 @@ I pretty much didnt do anything, since it was spring break, and I was too lazy.
 Today I added functionality for the transation of the basic operations + - * / %, made it so it actually does output the translated\
 code to a new file, which it prompts the user to name. I also added a bunch of comments to make the code easier to understand for
 people looking at it, and added a toString() method for the Variable class to make the final creation of variables easier.
+
+##4/8/2016
+Today we added a few more translations for various keywords, and added some comments to make the code easier to read. We also started
+trying to implement translations for class and method declarations. We started translations for Ruby comments as well, which is pretty
+easy, and finished the translations for all the operations.
