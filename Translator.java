@@ -44,8 +44,6 @@ public class Translator
                 writer.write(translate(line) + "\n"); //outputs the new java code to a file
             }
             bufferedReader.close();
-            writer.flush();
-            writer.close();
         }
         catch(FileNotFoundException ex)
         {
@@ -55,6 +53,15 @@ public class Translator
         {
             ex.printStackTrace(); //For other errors
         }
+
+        //Variable declarations
+        for(Variable var : vars)
+        {
+            writer.write("public" + var.toString + ";");
+        }
+        
+        writer.flush();
+        writer.close();
     }
     
     /**
@@ -131,7 +138,7 @@ public class Translator
             vars.add(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
         }
 
-        /* OPERATIONS (unfinished) */
+        /* OPERATIONS */
 
         else if(line.indexOf("+") != -1)
         {
@@ -160,12 +167,10 @@ public class Translator
     
         else if(line.indexOf("$")
         {
-            
             newLine += type + "line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("%") + 1 , eqPos), "double");
+            vars.add(line.substring(line.indexOf("%") + 1 , eqPos), "String");
         }
-        
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)

@@ -42,6 +42,6 @@ public class Variable
     */
     public String toString()
     {
-        return this.returnType() + " " + this.returnName();
+        return this.type + " " + this.name;
     }
 }
