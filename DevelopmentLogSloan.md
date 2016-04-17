@@ -55,3 +55,9 @@ people looking at it, and added a toString() method for the Variable class to ma
 Today we added a few more translations for various keywords, and added some comments to make the code easier to read. We also started
 trying to implement translations for class and method declarations. We started translations for Ruby comments as well, which is pretty
 easy, and finished the translations for all the operations. We were easily on time with our deliverable last week.
+
+##4/15/2016
+Today we fixed some problems with it by adding some spaces where we had forgotten to earlier, in between added parts of Strings
+mostly. I also started to make the variable declarations, by printing out all of the Variable objects we created toString() method. We
+just have all variables declared as public at the moment, although we will have to figure out a better way to that later. Also, I
+found that array declarations don't work too well yet.
