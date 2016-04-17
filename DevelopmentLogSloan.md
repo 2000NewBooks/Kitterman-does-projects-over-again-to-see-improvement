@@ -2,13 +2,13 @@
 Today we began writing a class that can determine if the code inputted by the user is actually Ruby, so that the translator can work.
 If it isn't, the program will throw some exceptions at them. We also began relearning Ruby, so that we can know what different Ruby
 code snippets can be replaced by Java code, and retain the same functionality that the original Ruby program had. This will most
-likely take quite a bit of time and testing, as we have to think of all possible Ruby commands that a user might have used in their
+likely take quite a bit of time and testing, as we have to think of all possible Ruby keywords that a user might have used in their
 program.
 
 ##2/11/2016
 Today I worked more on relearning Ruby, and realized how different of a programming language it is from java. I also now realize how
 hard it will be to do the translator, as we have to be able to handle anything the user puts in, whether its actually code or not. We
-are getting fairly close to finishng our class that can recognize actual Ruby code. After this is complete, we will begin making the
+are getting fairly close to finishing our class that can recognize actual Ruby code. After this is complete, we will begin making the
 main translator class that will replace the Ruby commands with java code that can do the same thing.
 
 ##2/18/2016
@@ -47,6 +47,17 @@ for loop with start..end or start...end.
 I pretty much didnt do anything, since it was spring break, and I was too lazy.
 
 ##4/1/2016
-Today I added functionality for the transation of the basic operations + - * / %, made it so it actually does output the translated\
+Today I added functionality for the transation of the basic operations + - * / %, made it so it actually does output the translated
 code to a new file, which it prompts the user to name. I also added a bunch of comments to make the code easier to understand for
 people looking at it, and added a toString() method for the Variable class to make the final creation of variables easier.
+
+##4/8/2016
+Today we added a few more translations for various keywords, and added some comments to make the code easier to read. We also started
+trying to implement translations for class and method declarations. We started translations for Ruby comments as well, which is pretty
+easy, and finished the translations for all the operations. We were easily on time with our deliverable last week.
+
+##4/15/2016
+Today we fixed some problems with it by adding some spaces where we had forgotten to earlier, in between added parts of Strings
+mostly. I also started to make the variable declarations, by printing out all of the Variable objects we created toString() method. We
+just have all variables declared as public at the moment, although we will have to figure out a better way to that later. Also, I
+found that array declarations don't work too well yet.
