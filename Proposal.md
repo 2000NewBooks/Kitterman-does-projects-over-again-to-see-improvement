@@ -1,6 +1,6 @@
 # Proposal: Java to Ruby Converter
 ## A Program that can transpose Java programs to Ruby scripts
-Andrew Kitterman
+Andrew Kitterman and
 Carson Sloan
 
 ## Needs and Opportunities
@@ -23,4 +23,4 @@ The final product will be a fully functional program that is able to turn compil
 We will most likely not need to purchase any products for the creation of this project.
 
 ## Conclusion
-Previously, anyone looking for a nice, free converter between different programming languages would be out of luck. However, after the completion of our program, they will be luckier than ever before, with a user-friendly, quick, and functional Java to Ruby Converter!
+Previously, anyone looking for a nice, free converter between different programming languages would be out of luck. However, after the completion of our program, they will be luckier than ever before, with a user-friendly, quick and functional Java to Ruby Converter!
