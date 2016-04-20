@@ -23,7 +23,7 @@ public class Translator
      * Runs the program
      * @param args unused
      */
-    public static void main(String args)
+    public static void main(String... args)
     {   
         Scanner kbReader = new Scanner(System.in);
         System.out.println("Please input the name of the file you would ike to have translated");
