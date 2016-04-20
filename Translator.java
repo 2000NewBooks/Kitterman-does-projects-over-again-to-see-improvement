@@ -23,7 +23,7 @@ public class Translator
      * Runs the program
      * @param args unused
      */
-    public static void main(String... args)
+    public static void main(String[] args)
     {   
         Scanner kbReader = new Scanner(System.in);
         System.out.println("Please input the name of the file you would ike to have translated");
@@ -81,19 +81,22 @@ public class Translator
         {
             newLine += "while ("; //Adds while to the new line
             eqPos = line.trim().indexOf("="); //Finds the index of the equal sign
-            vars.add(line.substring(line.indexOf("while") + 5, eqPos), "double");
+            Variable var = new Variable(line.substring(line.indexOf("while") + 5, eqPos), "double");
+            vars.add(var);
         }
         else if (line.indexOf("do") != -1)
         {
             newLine += "";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("do") + 2, eqPos), "double");
+            Variable var = new Variable(line.substring(line.indexOf("do") + 2, eqPos), "double");
+            vars.add(var);
         }
         else if (line.indexOf("for") != -1)
         {
             newLine += "for (";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("for") + 3, eqPos), "double");
+            Variable var = new Variable(line.substring(line.indexOf("for") + 3, eqPos), "double");
+            vars.add(var);
         }
         else if(line.indexOf("until") != -1 )
         {
@@ -102,7 +105,8 @@ public class Translator
             {
                 newLine += "do{" + line + "}";//This is still kinda broken.
                 eqPos = line.trim().indexOf("="); //Works sorta
-                vars.add(line.substring(line.indexOf("until") + 5 , eqPos), "double");
+                Variable var = new Variable(line.substring(line.indexOf("until") + 5 , eqPos), "double");
+                vars.add(var);
             }
         }
 
@@ -112,14 +116,16 @@ public class Translator
         {
             newLine += "System.out.println(//words);";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("puts") + 4 , eqPos), "String");
+            Variable var = new Variable(line.substring(line.indexOf("puts") + 4 , eqPos), "String");
+            vars.add(var);
         }
         
         else if(line.indexOf(".chomp") != -1)
         {
             newLine += "Console console = System.console(); String line = console.readLine(//words you want to take input from) ";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf(".chomp") + 6 , eqPos), "String");
+            Variable var = new Variable(line.substring(line.indexOf(".chomp") + 6 , eqPos), "String");
+            vars.add(var);
         }
 
         /* VARIABLES (Unfinished) */
@@ -128,14 +134,16 @@ public class Translator
         {
             newLine += "double[] newArr = new double[some number here];";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("Array.new") + 9 , eqPos), "double");
+            Variable var = new Variable(line.substring(line.indexOf("Array.new") + 9 , eqPos), "double");
+            vars.add(var);
         }
         
         else if(line.indexOf("Array.each") != -1)
         {
             newLine += "for(double u; newArr); {/*Some expression here/*}";
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
+            Variable var = new Variable(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
+            vars.add(var);
         }
 
         /* OPERATIONS */
@@ -169,7 +177,8 @@ public class Translator
         {
             newLine += type + line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
-            vars.add(line.substring(line.indexOf("%") + 1 , eqPos), "String");
+            Variable var = new Variable(line.substring(line.indexOf("%") + 1 , eqPos), "String");
+            vars.add(var);
         }
        
         else
