@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Translator
 {
-    private ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
+    private static ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
     private static int lineNum = -1; //Stores which line is being read
 
     /**
@@ -57,7 +57,7 @@ public class Translator
         //Variable declarations
         for(Variable var : vars)
         {
-            writer.write("public" + var.toString + ";");
+            writer.write("public" + var.toString() + ";");
         }
         
         writer.flush();
@@ -152,25 +152,26 @@ public class Translator
 
         else if(line.indexOf("/") != -1)
         {
-            newLine line + ";";
+            newLine = line + ";";
         }
 
         else if(line.indexOf("*") != -1)
         {
-            newLine line + ";";
+            newLine = line + ";";
         }
 
         else if(line.indexOf("%") != -1)
         {
-            newLine line + ";";
+            newLine = line + ";";
         }
     
-        else if(line.indexOf("$")
+        else if(line.indexOf("$"))
         {
-            newLine += type + "line.substring(line.indexOf("$"),line.indexOf(" ") );
+            newLine += type + line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
             vars.add(line.substring(line.indexOf("%") + 1 , eqPos), "String");
         }
+       
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
