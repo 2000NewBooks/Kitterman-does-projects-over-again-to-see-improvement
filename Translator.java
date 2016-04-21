@@ -175,10 +175,34 @@ public class Translator
     
         else if(line.indexOf("$"))
         {
-            newLine += type + line.substring(line.indexOf("$"),line.indexOf(" ") );
+            newLine +=  line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("%") + 1 , eqPos), "String");
+            Variable var = new Variable(line.substring(line.indexOf("$") + 1 , eqPos), "String");
             vars.add(var);
+        }
+        else if(line.indexOf("def"))
+        {
+             newLine += line.substring(line.indexOf("def"), line.indexOf(" "));
+             eqPos = line.trim().indexOf("=");
+             Varibale var = new Variable(Line.substring(line.indexOf("def") +1, eqpos), "String");
+             vars.add(var);
+            
+        }
+         else if(line.indexOf("end"))
+        {
+             newLine += line.substring(line.indexOf("end"), line.indexOf(" "));
+             eqPos = line.trim().indexOf("=");
+             Varibale var = new Variable(Line.substring(line.indexOf("end") +1, eqpos), "String");
+             vars.add(var);
+            
+        }
+         else if(line.indexOf("return"))
+        {
+             newLine += line.substring(line.indexOf("return"), line.indexOf(" "));
+             eqPos = line.trim().indexOf("=");
+             Varibale var = new Variable(Line.substring(line.indexOf("return") +1, eqpos), "String");
+             vars.add(var);
+            
         }
        
         else
