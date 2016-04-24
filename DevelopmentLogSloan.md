@@ -61,3 +61,6 @@ Today we fixed some problems with it by adding some spaces where we had forgotte
 mostly. I also started to make the variable declarations, by printing out all of the Variable objects we created toString() method. We
 just have all variables declared as public at the moment, although we will have to figure out a better way to that later. Also, I
 found that array declarations don't work too well yet.
+
+##4/22/2016
+Today I continued on the codecademy Ruby course, and realized we need to start working on hashes. This shouldnt't be too hard to implement though, as it's similar in Ruby and java, but will probably be a significant amount of work still. We are pretty well on our way to our deliverable, although our FileWriter writer is throwing an exception that it wasn;t before, so we need to figure out why, and fix the problem. It's kind of annoying however, cause we didn't even change anything in the method it's in.
