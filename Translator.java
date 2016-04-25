@@ -172,12 +172,28 @@ public class Translator
         {
             newLine = line + ";";
         }
+        /* I fixed all the variable assignment 4/25/16 -Andrew */
+        
     
         else if(line.indexOf("$"))
         {
             newLine +=  line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("$") + 1 , eqPos), "String");
+            vars.add(var);
+        }
+        else if(line.indexOf("@"))
+        {
+            newLine +=  line.substring(line.indexOf("@"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("@") + 1 , eqPos), "String");
+            vars.add(var);
+        }
+        else if(line.indexOf("@@"))
+        {
+            newLine +=  line.substring(line.indexOf("@@"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("@@") + 1 , eqPos), "String");
             vars.add(var);
         }
         else if(line.indexOf("def"))
@@ -203,8 +219,13 @@ public class Translator
              Varibale var = new Variable(Line.substring(line.indexOf("return") +1, eqpos), "String");
              vars.add(var);
             
-        }
+        }//so basically we don't want to take the time to translate all this crap
+        //so we're going to make sure it can recognize it at least
        
+       else if(line.indexOf("do"))
+        {
+            
+        }
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
