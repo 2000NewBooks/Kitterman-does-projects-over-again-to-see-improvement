@@ -226,6 +226,22 @@ public class Translator
         {
             
         }
+         else if(line.indexOf("when"))
+        {
+            
+        }
+         else if(line.indexOf("new"))
+        {
+            
+        }
+         else if(line.indexOf("upto"))
+        {
+            
+        }
+         else if(line.indexOf("# -> []"))
+        {
+            
+        }
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
