@@ -17,7 +17,7 @@ public class Translator
     {
 
     }
-    
+
     /**
      * Takes the user's Ruby file, then translates it to java and prints it to a new file
      * Runs the program
@@ -25,14 +25,25 @@ public class Translator
      */
     public static void main(String[] args)
     {   
+
         Scanner kbReader = new Scanner(System.in);
         System.out.println("Please input the name of the file you would ike to have translated");
         String fileName = kbReader.nextLine();
         System.out.println("Please input the name of the translated file to be output");
         String exportName = kbReader.nextLine();
-        File file = new File(exportName);
-        file.createNewFile();
-        FileWriter writer = new FileWriter(file);
+        File file = null;
+        FileWriter writer = null;
+        try {
+            file = new File(exportName);
+            file.createNewFile();
+            writer = new FileWriter(file);
+
+        }
+        catch (IOException e) {
+            System.out.println("oops");
+            System.exit(1);
+        }
+
         String line = null; //Used to scan line-by-line
         try
         {
@@ -57,13 +68,28 @@ public class Translator
         //Variable declarations
         for(Variable var : vars)
         {
-            writer.write("public" + var.toString() + ";");
+            try
+            {
+                writer.write("public" + var.toString() + ";");
+            }
+            catch(IOException I)
+            {
+                System.out.println("oops.");
+                System.exit(1);
+            }
         }
-        
-        writer.flush();
-        writer.close();
+        try
+        {
+            writer.flush();
+            writer.close();
+        }
+        catch(IOException I)
+        {
+            System.out.println("oops.");
+            System.exit(1);
+        }
     }
-    
+
     /**
      * Almost Done
      * Returns a java version of an inputted line of Ruby code
@@ -111,7 +137,7 @@ public class Translator
         }
 
         /* CONSOLE */
-        
+
         else if(line.indexOf("puts") != -1)
         {
             newLine += "System.out.println(//words);";
@@ -119,7 +145,7 @@ public class Translator
             Variable var = new Variable(line.substring(line.indexOf("puts") + 4 , eqPos), "String");
             vars.add(var);
         }
-        
+
         else if(line.indexOf(".chomp") != -1)
         {
             newLine += "Console console = System.console(); String line = console.readLine(//words you want to take input from) ";
@@ -129,7 +155,7 @@ public class Translator
         }
 
         /* VARIABLES (Unfinished) */
-        
+
         else if(line.indexOf("Array.new") != -1)
         {
             newLine += "double[] newArr = new double[some number here];";
@@ -137,7 +163,7 @@ public class Translator
             Variable var = new Variable(line.substring(line.indexOf("Array.new") + 9 , eqPos), "double");
             vars.add(var);
         }
-        
+
         else if(line.indexOf("Array.each") != -1)
         {
             newLine += "for(double u; newArr); {/*Some expression here/*}";
@@ -173,74 +199,73 @@ public class Translator
             newLine = line + ";";
         }
         /* I fixed all the variable assignment 4/25/16 -Andrew */
-        
-    
-        else if(line.indexOf("$"))
+
+        else if(line.indexOf("$")!= -1)
         {
             newLine +=  line.substring(line.indexOf("$"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("$") + 1 , eqPos), "String");
             vars.add(var);
         }
-        else if(line.indexOf("@"))
+        else if(line.indexOf("@")!= -1)
         {
             newLine +=  line.substring(line.indexOf("@"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("@") + 1 , eqPos), "String");
             vars.add(var);
         }
-        else if(line.indexOf("@@"))
+        else if(line.indexOf("@@")!= -1)
         {
             newLine +=  line.substring(line.indexOf("@@"),line.indexOf(" ") );
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("@@") + 1 , eqPos), "String");
             vars.add(var);
         }
-        else if(line.indexOf("def"))
+        else if(line.indexOf("def")!= -1)
         {
-             newLine += line.substring(line.indexOf("def"), line.indexOf(" "));
-             eqPos = line.trim().indexOf("=");
-             Varibale var = new Variable(Line.substring(line.indexOf("def") +1, eqpos), "String");
-             vars.add(var);
-            
+            newLine += line.substring(line.indexOf("def"), line.indexOf(" "));
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("def") +1, eqPos), "String");
+            vars.add(var);
+
         }
-         else if(line.indexOf("end"))
+        else if(line.indexOf("end")!= -1)
         {
-             newLine += line.substring(line.indexOf("end"), line.indexOf(" "));
-             eqPos = line.trim().indexOf("=");
-             Varibale var = new Variable(Line.substring(line.indexOf("end") +1, eqpos), "String");
-             vars.add(var);
-            
+            newLine += line.substring(line.indexOf("end"), line.indexOf(" "));
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("end") +1, eqPos), "String");
+            vars.add(var);
+
         }
-         else if(line.indexOf("return"))
+        else if(line.indexOf("return")!= -1)
         {
-             newLine += line.substring(line.indexOf("return"), line.indexOf(" "));
-             eqPos = line.trim().indexOf("=");
-             Varibale var = new Variable(Line.substring(line.indexOf("return") +1, eqpos), "String");
-             vars.add(var);
-            
+            newLine += line.substring(line.indexOf("return"), line.indexOf(" "));
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("return") +1, eqPos), "String");
+            vars.add(var);
+
         }//so basically we don't want to take the time to translate all this crap
         //so we're going to make sure it can recognize it at least
-       
-       else if(line.indexOf("do"))
+
+        else if(line.indexOf("do")!= -1)
         {
-            
+
         }
-         else if(line.indexOf("when"))
+        else if(line.indexOf("when")!= -1)
         {
-            
+
         }
-         else if(line.indexOf("new"))
+        else if(line.indexOf("new")!= -1)
         {
-            
+
         }
-         else if(line.indexOf("upto"))
+        else if(line.indexOf("upto")!= -1)
         {
-            
+
         }
-         else if(line.indexOf("# -> []"))
+        else if(line.indexOf("# -> []")!= -1)
         {
-            
+
         }
         else
         {
