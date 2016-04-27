@@ -267,6 +267,10 @@ public class Translator
         {
 
         }
+        else if(line.indexOf("end")!= -1)
+        {
+
+        }
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
