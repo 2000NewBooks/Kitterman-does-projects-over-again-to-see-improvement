@@ -271,6 +271,139 @@ public class Translator
         {
 
         }
+        //There aren't hashmaps in ruby, only hashes.
+        else if(line.indexOf("hash.new")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.key")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.clear")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.default")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.delete")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.each")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.empty?")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.fetch")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.has")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.key?")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.index")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.indexes")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.indices")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.inspect")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.invert")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.keys")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.length")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.merge")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.merge!")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.rehash")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.reject")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.reject!")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.replace")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.select")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.shift")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.size")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.sort")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.store")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.to_")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.update")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.value?")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.values")!= -1)
+        {
+
+        }
+        else if(line.indexOf("hash.values_at")!= -1)
+        {
+
+        }
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
