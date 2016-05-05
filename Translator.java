@@ -244,170 +244,172 @@ public class Translator
             Variable var = new Variable(line.substring(line.indexOf("return") +1, eqPos), "String");
             vars.add(var);
 
-        }//so basically we don't want to take the time to translate all this crap
+        }//so basically we don't want to take the time to translate all this crap. That would take years.
         //so we're going to make sure it can recognize it at least
-
+        //I don't even know what half of this is - Kitterman
         else if(line.indexOf("do")!= -1)
         {
-
+            //does something
         }
         else if(line.indexOf("when")!= -1)
         {
-
+            //when a condition is met, do something
         }
         else if(line.indexOf("new")!= -1)
         {
-
+            //creates a new object.     
         }
         else if(line.indexOf("upto")!= -1)
         {
-
+            //passes an int up and to a number
         }
         else if(line.indexOf("# -> []")!= -1)
         {
-
+            //I think this is something about arrays
         }
         else if(line.indexOf("end")!= -1)
         {
-
+            //ends something
         }
         //There aren't hashmaps in ruby, only hashes.
         else if(line.indexOf("hash.new")!= -1)
         {
-
+            //creates a new hash
         }
-        else if(line.indexOf("hash.key")!= -1)
+        else if(line.indexOf("hash.[key]")!= -1)
         {
-
+            //associates the value of key with a new value that isn't declared here because WHAT IF THEY DIDN'T NAME THEIR OBJECT VALUE??
         }
         else if(line.indexOf("hash.clear")!= -1)
         {
-
+            //removes all key-value pairs from a hash
         }
-        else if(line.indexOf("hash.default")!= -1)
+        else if(line.indexOf("hash.default(")!= -1)
         {
-
+            //returns the default value for the hash
         }
         else if(line.indexOf("hash.delete")!= -1)
         {
-
+            //delets a key value pair from the hash
         }
         else if(line.indexOf("hash.each")!= -1)
         {
-
+            //Iterates over the hash
         }
         else if(line.indexOf("hash.empty?")!= -1)
         {
-
+            //checks to see if the hash is empty.
         }
         else if(line.indexOf("hash.fetch")!= -1)
         {
-
+            //returns a value for the given key
         }
         else if(line.indexOf("hash.has")!= -1)
         {
-
+            //checks to see if the hash contains the key-value pair
         }
         else if(line.indexOf("hash.key?")!= -1)
         {
-
+            //checks to see if the hash contains the key
         }
         else if(line.indexOf("hash.index")!= -1)
         {
-
+            //returns the given key for the value
         }
         else if(line.indexOf("hash.indexes")!= -1)
         {
-
+            //returns a new array of values for the given key
         }
         else if(line.indexOf("hash.indices")!= -1)
         {
-
+            //same thing as indexes.
         }
         else if(line.indexOf("hash.inspect")!= -1)
         {
-
+            //returns a pretty string version of the hash
         }
         else if(line.indexOf("hash.invert")!= -1)
         {
-
+            //creates a new hash, inverting the keys and values
         }
         else if(line.indexOf("hash.keys")!= -1)
         {
-
+            //creates a new array of keys from hash
         }
         else if(line.indexOf("hash.length")!= -1)
         {
-
+            //returns the size of hash as an Integer
         }
         else if(line.indexOf("hash.merge")!= -1)
         {
-
+            //returns a new hash merging two hashes, hash and other_hash
         }
         else if(line.indexOf("hash.merge!")!= -1)
         {
-
+            //same as .merge, but in place with no duplicates
         }
         else if(line.indexOf("hash.rehash")!= -1)
         {
-
+            //builds a new hash based on the current values for each key
         }
         else if(line.indexOf("hash.reject")!= -1)
         {
-
+            //returns a new hash for every pair of the block that returns true
         }
         else if(line.indexOf("hash.reject!")!= -1)
         {
-
+            //same as reject, but changes are made in place
         }
         else if(line.indexOf("hash.replace")!= -1)
         {
-
+            //replaces the current hash with the contents of a different hash
         }
         else if(line.indexOf("hash.select")!= -1)
         {
-
+            //returns a new hash with the values of the block that return true
         }
         else if(line.indexOf("hash.shift")!= -1)
         {
-
+            //removes a key-value pair from hash, returning a 2-element array
         }
         else if(line.indexOf("hash.size")!= -1)
         {
-
+            //returns the size/length of the hash as an Integer
         }
         else if(line.indexOf("hash.sort")!= -1)
         {
-
+            //converts hash to a 2d array and sorts it as an array
         }
         else if(line.indexOf("hash.store")!= -1)
         {
-
+            //stores a key-value pair in hash
         }
         else if(line.indexOf("hash.to_")!= -1)
         {
-
+            //converts hash to an array, taking all the key-value pairs with it
         }
         else if(line.indexOf("hash.update")!= -1)
         {
-
+            //returns the contents of hash and another hash with duplicate keys
         }
         else if(line.indexOf("hash.value?")!= -1)
         {
-
+            //tests whether hash contains the value
         }
         else if(line.indexOf("hash.values")!= -1)
         {
-
+            //returns a new array containing all the values of hash
         }
         else if(line.indexOf("hash.values_at")!= -1)
         {
-
+            //returns a new hash that has all the keys associated with the values
         }
+        //after typing all that, hash doesn't sound like a real word.
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
-        }
-        return newLine;
+        }//this better work carson
+        return newLine;//ALSO FREAKING ONE LINE??? 
+        //oh wait, it's a line printed to a file. Never mind.
     }
 }
