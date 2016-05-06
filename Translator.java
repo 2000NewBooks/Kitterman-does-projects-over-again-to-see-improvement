@@ -11,11 +11,11 @@ public class Translator
     private static int lineNum = -1; //Stores which line is being read
 
     /**
-     * Constructor for objects of class Translator (Unused)
+     * Constructor for objects of class Translator
      */
     public Translator()
     {
-
+        //We didn't use this, but left in anyway
     }
 
     /**
@@ -66,6 +66,7 @@ public class Translator
         }
 
         //Variable declarations
+        //Executes at the end after all main method lines have been translated
         for(Variable var : vars)
         {
             try
@@ -154,7 +155,7 @@ public class Translator
             vars.add(var);
         }
 
-        /* VARIABLES (Unfinished) */
+        /* VARIABLES */
 
         else if(line.indexOf("Array.new") != -1)
         {
@@ -169,6 +170,38 @@ public class Translator
             newLine += "for(double u; newArr); {/*Some expression here/*}";
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("Array.each") + 10 , eqPos), "double");
+            vars.add(var);
+        }
+
+        else if(line.indexOf("$")!= -1)
+        {
+            newLine +=  line.substring(line.indexOf("$"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("$") + 1 , eqPos), "String");
+            vars.add(var);
+        }
+
+        else if(line.indexOf("@")!= -1)
+        {
+            newLine +=  line.substring(line.indexOf("@"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("@") + 1 , eqPos), "String");
+            vars.add(var);
+        }
+
+        else if(line.indexOf("@@")!= -1)
+        {
+            newLine +=  line.substring(line.indexOf("@@"),line.indexOf(" ") );
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("@@") + 1 , eqPos), "String");
+            vars.add(var);
+        }
+
+        else if(line.indexOf("def")!= -1)
+        {
+            newLine += line.substring(line.indexOf("def"), line.indexOf(" "));
+            eqPos = line.trim().indexOf("=");
+            Variable var = new Variable(line.substring(line.indexOf("def") +1, eqPos), "String");
             vars.add(var);
         }
 
@@ -198,54 +231,31 @@ public class Translator
         {
             newLine = line + ";";
         }
-        /* I fixed all the variable assignment 4/25/16 -Andrew */
 
-        else if(line.indexOf("$")!= -1)
-        {
-            newLine +=  line.substring(line.indexOf("$"),line.indexOf(" ") );
-            eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("$") + 1 , eqPos), "String");
-            vars.add(var);
-        }
-        else if(line.indexOf("@")!= -1)
-        {
-            newLine +=  line.substring(line.indexOf("@"),line.indexOf(" ") );
-            eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("@") + 1 , eqPos), "String");
-            vars.add(var);
-        }
-        else if(line.indexOf("@@")!= -1)
-        {
-            newLine +=  line.substring(line.indexOf("@@"),line.indexOf(" ") );
-            eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("@@") + 1 , eqPos), "String");
-            vars.add(var);
-        }
-        else if(line.indexOf("def")!= -1)
-        {
-            newLine += line.substring(line.indexOf("def"), line.indexOf(" "));
-            eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("def") +1, eqPos), "String");
-            vars.add(var);
+        /* STUFF */
+        //Not sure what you want this to do
 
-        }
         else if(line.indexOf("end")!= -1)
         {
             newLine += line.substring(line.indexOf("end"), line.indexOf(" "));
             eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("end") +1, eqPos), "String");
-            vars.add(var);
-
+            //Unnecessary
+            //Variable var = new Variable(line.substring(line.indexOf("end") +1, eqPos), "String");
+            //vars.add(var);
         }
+
         else if(line.indexOf("return")!= -1)
         {
             newLine += line.substring(line.indexOf("return"), line.indexOf(" "));
             eqPos = line.trim().indexOf("=");
-            Variable var = new Variable(line.substring(line.indexOf("return") +1, eqPos), "String");
-            vars.add(var);
+            //Unnecessary
+            //Variable var = new Variable(line.substring(line.indexOf("return") +1, eqPos), "String");
+            //vars.add(var); 
+        }
 
-        }//so basically we don't want to take the time to translate all this crap. That would take years.
-        //so we're going to make sure it can recognize it at least
+        /* HASHES */
+        //So basically we don't want to take the time to translate all this crap. That would take years.
+        //So we're going to make sure it can recognize it at least
         //I don't even know what half of this is - Kitterman
         else if(line.indexOf("do")!= -1)
         {
@@ -408,8 +418,7 @@ public class Translator
         else
         {
             throw new IndexOutOfBoundsException("Unknown argument on line " + lineNum); //If it finds an argument that isn't listed (Obviously, more need to be added)
-        }//this better work carson
-        return newLine;//ALSO FREAKING ONE LINE??? 
-        //oh wait, it's a line printed to a file. Never mind.
+        }
+        return newLine;
     }
 }
