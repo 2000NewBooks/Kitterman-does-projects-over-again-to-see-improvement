@@ -63,4 +63,14 @@ just have all variables declared as public at the moment, although we will have 
 found that array declarations don't work too well yet.
 
 ##4/22/2016
-Today I continued on the codecademy Ruby course, and realized we need to start working on hashes. This shouldnt't be too hard to implement though, as it's similar in Ruby and java, but will probably be a significant amount of work still. We are pretty well on our way to our deliverable, although our FileWriter writer is throwing an exception that it wasn;t before, so we need to figure out why, and fix the problem. It's kind of annoying however, cause we didn't even change anything in the method it's in.
+Today I continued on the codecademy Ruby course, and realized we need to start working on hashes. This shouldnt't be too hard to
+implement though, as it's similar in Ruby and java, but will probably be a significant amount of work still. We are pretty well on our
+way to our deliverable, although our FileWriter writer is throwing an exception that it wasn;t before, so we need to figure out why,
+and fix the problem. It's kind of annoying however, cause we didn't even change anything in the method it's in.
+
+##5/6/2016
+Today we worked on finishing touches for the deliverable, which is to recognize 'all of Ruby'. We technically don't have ALL of Ruby
+done, cause that would take quite a while, but we have all the most used keywords, and as many other random ones as we could find for
+it to recognize. Andrew recently implemented Hash recognition, although it doesn't actually translate them at this point. We may or
+may not implement hash translations, as there are quite a few things to add, and some are quite different from Java to Ruby. Our
+deliverable is completely done, and we have even done translations for all keywords besides Hashes.
