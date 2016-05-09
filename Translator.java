@@ -11,15 +11,6 @@ public class Translator //declare the class
     private static int lineNum = -1; //Stores which line is being read
 
     /**
-     * Constructor for objects of class Translator
-     */
-    public Translator()//The dumb constructor SOMEBODY MADE AND WON'T REMOVE BECAUSE IT'S "CONVENTION"
-    {
-        //We didn't use this, but left in anyway
-        //Carson, just take it out to stop confusing me and other people who might use this code.
-    }
-
-    /**
      * Takes the user's Ruby file, then translates it to java and prints it to a new file
      * Runs the program
      * @param args unused
