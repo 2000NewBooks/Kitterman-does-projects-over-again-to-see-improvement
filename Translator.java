@@ -16,12 +16,14 @@ public class Translator
     public Translator()
     {
         //We didn't use this, but left in anyway
+        //Carson, just take it out to stop confusing me and other people who might use this code.
     }
 
     /**
      * Takes the user's Ruby file, then translates it to java and prints it to a new file
      * Runs the program
      * @param args unused
+     * We need this method, keep it.
      */
     public static void main(String[] args)
     {   
