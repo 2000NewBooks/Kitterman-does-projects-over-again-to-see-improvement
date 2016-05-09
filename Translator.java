@@ -116,7 +116,7 @@ public class Translator //declare the class
             newLine += "for (";
             eqPos = line.trim().indexOf("=");
             Variable var = new Variable(line.substring(line.indexOf("for") + 3, eqPos), "double");
-            vars.add(var);
+            vars.add(var);//Carson won't remove these comments, so this one adds a new var to Vars.
         }
         else if(line.indexOf("until") != -1 )
         {
