@@ -1,11 +1,11 @@
-import java.io.*;
-import java.util.*;
+import java.io.*;//imports java.io.*
+import java.util.*; //imports java.util.*
 /**
  * A class that takes a Ruby script and translates it into a Java program
  * 
  * @author Carson Sloan and Andrew Kitterman
  */
-public class Translator
+public class Translator //declare the class
 {
     private static ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
     private static int lineNum = -1; //Stores which line is being read
@@ -13,7 +13,7 @@ public class Translator
     /**
      * Constructor for objects of class Translator
      */
-    public Translator()
+    public Translator()//The dumb constructor SOMEBODY MADE AND WON'T REMOVE BECAUSE IT'S "CONVENTION"
     {
         //We didn't use this, but left in anyway
         //Carson, just take it out to stop confusing me and other people who might use this code.
@@ -25,18 +25,18 @@ public class Translator
      * @param args unused
      * We need this method, keep it.
      */
-    public static void main(String[] args)
+    public static void main(String[] args)//the main method
     {   
 
-        Scanner kbReader = new Scanner(System.in);
-        System.out.println("Please input the name of the file you would ike to have translated");
-        String fileName = kbReader.nextLine();
-        System.out.println("Please input the name of the translated file to be output");
-        String exportName = kbReader.nextLine();
-        File file = null;
-        FileWriter writer = null;
-        try {
-            file = new File(exportName);
+        Scanner kbReader = new Scanner(System.in);//makes a new Scanner called kbReader
+        System.out.println("Please input the name of the file you would ike to have translated");//prints to the console
+        String fileName = kbReader.nextLine();//eats their input
+        System.out.println("Please input the name of the translated file to be output");//prints to console
+        String exportName = kbReader.nextLine();//eats their input
+        File file = null;//makes a new empty file
+        FileWriter writer = null;//makes a new filewriter that is null
+        try {//starts a try-catch block
+            file = new File(exportName);//sets our file name equal to theirs because reasons
             file.createNewFile();
             writer = new FileWriter(file);
 
