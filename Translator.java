@@ -6,7 +6,7 @@ import java.util.*; //imports java.util.*
  * @author Carson Sloan and Andrew Kitterman
  */
 public class Translator //declare the class
-{
+{//there isn't a constructor because I said no, we don't need that and it's not convention if our methods are static
     private static ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
     private static int lineNum = -1; //Stores which line is being read
 
