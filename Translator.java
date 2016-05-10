@@ -28,21 +28,21 @@ public class Translator //declare the class
         FileWriter writer = null;//makes a new filewriter that is null
         try {//starts a try-catch block
             file = new File(exportName);//sets our file name equal to theirs because reasons
-            file.createNewFile();
-            writer = new FileWriter(file);
+            file.createNewFile();//creates a new file
+            writer = new FileWriter(file);//Sets writer equal to a new filewriter that writes to a file
 
         }
-        catch (IOException e) {
-            System.out.println("oops");
-            System.exit(1);
+        catch (IOException e) {//catches an IO Exception
+            System.out.println("oops");//Something went wrong
+            System.exit(1);//Exits with an error
         }
 
         String line = null; //Used to scan line-by-line
-        try
+        try//starts a try block
         {
-            FileReader reader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            while((line = bufferedReader.readLine()) != null)
+            FileReader reader = new FileReader(fileName);//Filewriters be like
+            BufferedReader bufferedReader = new BufferedReader(reader);//Too long; read anyway
+            while((line = bufferedReader.readLine()) != null)//Starts a while loopy-thingy
             {
                 lineNum++; //corrects what line is being read
                 writer.write(translate(line) + "\n"); //outputs the new java code to a file
@@ -51,36 +51,36 @@ public class Translator //declare the class
         }
         catch(FileNotFoundException ex)//starts a catch thingy.
         {
-            System.out.println("Unable to open file '" + fileName + "'");
+            System.out.println("Unable to open file '" + fileName + "'");//Prints an error 
         }
-        catch(IOException ex)
+        catch(IOException ex)//Catches an IO Exception
         {
             ex.printStackTrace(); //For other errors
         }
 
         //Variable declarations
         //Executes at the end after all main method lines have been translated
-        for(Variable var : vars)
+        for(Variable var : vars)//For-each loop
         {
-            try
+            try//Try thingy again
             {
-                writer.write("public" + var.toString() + ";");
+                writer.write("public" + var.toString() + ";");//Writes something to a file
             }
-            catch(IOException I)
+            catch(IOException I)//catches an IO exception
             {
-                System.out.println("oops.");
-                System.exit(1);
+                System.out.println("oops.");//Prints oops
+                System.exit(1);//exits with an error
             }
         }
         try
         {
-            writer.flush();
-            writer.close();
+            writer.flush();//Clears the writer
+            writer.close();//closes the writer
         }
-        catch(IOException I)
+        catch(IOException I)//Catches an IO exception
         {
-            System.out.println("oops.");
-            System.exit(1);
+            System.out.println("oops.");//Prints oops
+            System.exit(1);//Exits with an error
         }
     }
 
@@ -89,15 +89,15 @@ public class Translator //declare the class
      * Returns a java version of an inputted line of Ruby code
      * @return a java version of an inputted line of Ruby code
      */
-    public static String translate(String line)
+    public static String translate(String line)//Declares the translate method
     {
         int eqPos = -1; //Stores the position of the equal sign so the variables can be separated
         String newLine = ""; //Translated line
-        boolean isUntilLoop = false;
+        boolean isUntilLoop = false;//sets this boolean to false
 
         /* LOOPS */
 
-        if (line.indexOf("while") != -1)
+        if (line.indexOf("while") != -1)//Checks index
         {
             newLine += "while ("; //Adds while to the new line
             eqPos = line.trim().indexOf("="); //Finds the index of the equal sign
