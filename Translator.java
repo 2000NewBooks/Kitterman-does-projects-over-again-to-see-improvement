@@ -47,9 +47,9 @@ public class Translator //declare the class
                 lineNum++; //corrects what line is being read
                 writer.write(translate(line) + "\n"); //outputs the new java code to a file
             }
-            bufferedReader.close();
+            bufferedReader.close();//Closes the buffered reader
         }
-        catch(FileNotFoundException ex)
+        catch(FileNotFoundException ex)//starts a catch thingy.
         {
             System.out.println("Unable to open file '" + fileName + "'");
         }
