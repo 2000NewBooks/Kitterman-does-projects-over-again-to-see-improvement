@@ -1,12 +1,12 @@
-import java.io.*;//imports java.io.*
-import java.util.*; //imports java.util.*
+import java.io.*;
+import java.util.*; 
 /**
  * A class that takes a Ruby script and translates it into a Java program
  * 
  * @author Carson Sloan and Andrew Kitterman
  */
-public class Translator //declare the class
-{//there isn't a constructor because I said no, we don't need that and it's not convention if our methods are static
+public class Translator
+{
     private static ArrayList<Variable> vars = new ArrayList<Variable>(); //Stores variables to be added as state variables in the translated code
     private static int lineNum = -1; //Stores which line is being read
 
@@ -14,18 +14,17 @@ public class Translator //declare the class
      * Takes the user's Ruby file, then translates it to java and prints it to a new file
      * Runs the program
      * @param args unused
-     * We need this method, keep it.
      */
-    public static void main(String[] args)//the main method
+    public static void main(String[] args)
     {   
 
-        Scanner kbReader = new Scanner(System.in);//makes a new Scanner called kbReader
-        System.out.println("Please input the name of the file you would ike to have translated");//prints to the console
-        String fileName = kbReader.nextLine();//eats their input
-        System.out.println("Please input the name of the translated file to be output");//prints to console
-        String exportName = kbReader.nextLine();//eats their input
-        File file = null;//makes a new empty file
-        FileWriter writer = null;//makes a new filewriter that is null
+        Scanner kbReader = new Scanner(System.in);
+        System.out.println("Please input the name of the file you would ike to have translated");
+        String fileName = kbReader.nextLine();
+        System.out.println("Please input the name of the translated file to be output");
+        String exportName = kbReader.nextLine();
+        File file = null;
+        FileWriter writer = null;
         try {//starts a try-catch block
             file = new File(exportName);//sets our file name equal to theirs because reasons
             file.createNewFile();//creates a new file
