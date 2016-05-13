@@ -44,30 +44,32 @@ public class Translator
             while((line = bufferedReader.readLine()) != null)//Starts a while loopy-thingy
             {
                 lineNum++; //corrects what line is being read
-                writer.write(translate(line) + "\n"); //outputs the new java code to a file
+                writer.write(translate(line) + "\n"); 
             }
-            bufferedReader.close();//Closes the buffered reader
+            bufferedReader.close();
         }
-        catch(FileNotFoundException ex)//starts a catch thingy.
+        catch(FileNotFoundException ex)
+        
+        
         {
-            System.out.println("Unable to open file '" + fileName + "'");//Prints an error 
+            System.out.println("Unable to open file '" + fileName + "'");
         }
-        catch(IOException ex)//Catches an IO Exception
+        catch(IOException ex)
         {
             ex.printStackTrace(); //For other errors
         }
 
         //Variable declarations
         //Executes at the end after all main method lines have been translated
-        for(Variable var : vars)//For-each loop
+        for(Variable var : vars)
         {
-            try//Try thingy again
+            try
             {
-                writer.write("public" + var.toString() + ";");//Writes something to a file
+                writer.write("public" + var.toString() + ";");
             }
-            catch(IOException I)//catches an IO exception
+            catch(IOException I)
             {
-                System.out.println("oops.");//Prints oops
+                System.out.println("oops.");
                 System.exit(1);//exits with an error
             }
         }
