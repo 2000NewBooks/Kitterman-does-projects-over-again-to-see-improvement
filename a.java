@@ -22,7 +22,7 @@ public class a
     /**
      * Worst Sorting algorithm I've seen
      * #author Andrew Kitterman
-     * I named this after my math teacher. He takes about the same amout of time to teach a lesson
+     * I named this after my math teacher. He takes about the same amout of time to teach a lesson (Your teacher is named kitterman?)
      */
     public long kittermanSort()
 
