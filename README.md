@@ -1,4 +1,1 @@
-
-#SwagSort
-
-Yo Yo Yo this be the literal shit. It sort slower than yo Grandpa
+This sort doesn't work too well
