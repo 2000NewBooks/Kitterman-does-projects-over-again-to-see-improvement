@@ -1,6 +1,6 @@
 import java.util.concurrent.CountDownLatch;
 import java.util.*;
-public class a
+public class KittermanSort
 {
 
     /**
