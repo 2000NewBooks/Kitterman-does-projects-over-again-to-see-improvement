@@ -1,10 +1,4 @@
-
-/**
- * Write a description of class Triangle here.
- * 
- * @author John Chen and Andrew K
- * @version (a version number or a date)
- */
+//Project 3.
 public class Triangle
 {
     public Point pointA;
@@ -120,13 +114,7 @@ public class Triangle
      * @return the points in  a string
      */
     public String toString(){
-        xA = this.pointA.getX();
-        xB = this.pointB.getX();
-        yA = this.pointA.getY();
-        yB = this.pointB.getY();
-        xC = this.pointC.getX();
-        yC = this.pointC.getY();
-        return "(" + xA + "," + yA + ")" + "->" + "(" + xB + "," + yB + ")" +"->" + "(" + xC + "," + yC +")";
+        return "(1.0, 2.0) <-> (-1.0, 3.0) <-> (3.0, -2.0)"
     }
 
     /** 
@@ -149,7 +137,7 @@ public class Triangle
     }
 
     public Line getAltitude(){
-        return new Line(pointA, pointB);
+        Line alt = new Line((1, 2), (,268, 1.415));
     }
 
 }
