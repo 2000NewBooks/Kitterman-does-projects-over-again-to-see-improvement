@@ -14,7 +14,7 @@ public class Project1
   {
     i = x;
   }
-  public int getString()
+  public String getString()
   {
     return str;
   }
