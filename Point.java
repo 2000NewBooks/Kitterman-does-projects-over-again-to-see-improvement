@@ -1,3 +1,4 @@
+//Project 2
 public class Point
 {
   double x;
