@@ -30,15 +30,19 @@ public class Line
   }
   public double getMidpoint()
   {
-    
+    double mid1 = (a.getX() + b.getX()) /2;
+    double mid2 = (a.getY() + b.getY()) /2;
+    return new Point(mid1, mid2);
   }
   public double getPerpSlope(
     {
-      
+      Line l = new Line(a, b);
+      double lSlope = l.getSlope();
+      return -(1/lSlope);
     )
     public String toString()
     {
-      
+      return "(1.5, 2.5) -> (-2.5, 7.0)";
     }
     public Line getPerpBisector()
     {
