@@ -88,7 +88,7 @@ public class Magpie
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
 		
-		if (whichResponse == 0)
+		if (whichResponse == 0)//Do the stuff in the commit message.
 		{
 			response = "Interesting, tell me more.";
 		}
