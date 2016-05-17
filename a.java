@@ -1,34 +1,19 @@
-//for(int wq = 0; wq < 10; wq++)
+import java.util.concurrent.CountDownLatch;
 import java.util.*;
 public class a
 {
-    public int[] arr = new int[4];
-    /**
-     * This is the constructor, sets all the variables to numbers.
-     */
-    a()
-    {
-        arr[0] = 69;
-        arr[1] = 420;
-        arr[2] = 7;
-        arr[3] = 6;
-        //arr[4] = 5;
-        //arr[5] = 4;
-        //arr[6] = 3;
-        //arr[7] = 2;
-        //arr[8] = 1;
-    }
 
     /**
-     * Worst Sorting algorithm I've seen
-     * #author Andrew Kitterman
-     * I named this after my math teacher. He takes about the same amout of time to teach a lesson (Your teacher is named kitterman?)
+     *This is the main method
+     * To run it, create an integer array arr
+     * Then wait a long time for us to sort
+     * and to not return the same numbers 
+     * you started with
      */
-    public long kittermanSort()
+    public long kittermanSort(int[] arr)
 
     {
         long startTime = System.nanoTime();
-
 
         for(int ik : arr)
         {
@@ -236,7 +221,7 @@ public class a
                                     }
                                     System.out.println(Arrays.toString(arr));
                                     System.out.println("if you see this, good luck not crashing.");
-                                    
+
                                 }
                             }
                         }
@@ -244,20 +229,30 @@ public class a
                 }
             }
         }
+        final CountDownLatch doneSignal = new CountDownLatch(arr.length);
+        for(final int nums : arr)
+        {
+            new Thread(new Runnable(){
+                public void run(){
+                    doneSignal.countDown();
+                    try
+                    {
+                        doneSignal.await();
+
+                        Thread.sleep(nums * 1000);
+                        System.out.println(nums);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        }
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
         return duration;         
+
     }
-    public void bogoSort(List<Integer> deck) {
-        while(!isInOrder(deck)) {
-            Collections.shuffle(deck);
-        }
-    }
-     
-    public boolean isInOrder(List<Integer> deck) {
-        for (int i = 0; i < deck.size() - 1; i++) {
-            if (deck.get(i) > deck.get(i+1)) return false;
-        }
-        return true;
-    }
+
+   
 }
+
