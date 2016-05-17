@@ -3,9 +3,9 @@
  * A program to carry on conversations with a human user.
  * This version:
  *<ul><li>
- * 		Uses advanced search for keywords
+ *      Uses advanced search for keywords
  *</li><li>
- * 		Will transform statements as well as react to keywords
+ *      Will transform statements as well as react to keywords
  *</li></ul>
  * @author Laurie White
  * @version April 2012
@@ -131,7 +131,7 @@ public class Magpie
         }
         int psn = findKeyword (statement, "I want", 0);
         String restOfStatement = statement.substring(psn + 6).trim();
-        return "Would you really be happy if you had " + restOfStatement + "?";
+        return "Would you really be happy if you had pie?";
     }
 
     /**
@@ -196,11 +196,11 @@ public class Magpie
         int psnOfI = findKeyword (statement, "i", 0);
         int psnOfYou = findKeyword (statement, "you", psnOfI + 1);
 
-        String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
-        return "Why do you " + restOfStatement + " me?";
+        
+        return "Why do you " + "tolerate" + " me?";
     }
 
-	
+    
     /**
      * Search for one word in phrase.  The search is not case sensitive.
      * This method will check that the given goal is not a substring of a longer string
@@ -264,7 +264,7 @@ public class Magpie
      */
     private String getRandomResponse()
     {
-        final int NUMBER_OF_RESPONSES = 4;
+        final int NUMBER_OF_RESPONSES = 8;
         double r = Math.random();
         int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
         String response = "";
